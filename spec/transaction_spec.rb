@@ -11,7 +11,7 @@ describe Transaction do
   describe 'withdraw' do
     it 'should return the amount withdrawn by the user' do
       transaction = Transaction.new
-      expect(transaction.withdraw(80)).to eq(80)
+      expect(transaction.withdraw(80)).to eq(-80)
     end
   end
 end

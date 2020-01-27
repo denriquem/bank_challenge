@@ -5,6 +5,6 @@ class Transaction
   end
 
   def withdraw(amount)
-    @money_out = amount
+    @money_out = -amount
   end
 end
