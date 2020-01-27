@@ -1,5 +1,5 @@
+# Transaction class
 class Transaction
-
   def deposit(amount)
     @money_in = amount
   end
@@ -7,5 +7,4 @@ class Transaction
   def withdraw(amount)
     @money_out = amount
   end
-
 end
