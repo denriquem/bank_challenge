@@ -6,6 +6,12 @@ describe Transaction do
       transaction = Transaction.new
       expect(transaction.deposit(90)).to eq(90)
     end
+
+    it 'should return the date that a deposit was made by the user' do
+      transaction = Transaction.new
+      now = Time.now
+      expect(transaction.date).to eq(now.strftime("%d/%m/%Y"))
+    end
   end
 
   describe 'withdraw' do
