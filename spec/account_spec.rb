@@ -7,24 +7,28 @@ describe Account do
   subject(:account) { described_class.new }
 
   describe 'check_balance' do
-    it 'should return the balance of a user after deposits' do
+    it 'should return a list of balances following deposits' do
       allow(transaction).to receive(:deposit).and_return(90)
-      first_deposit = transaction.deposit(90)
+      account.balance_history(transaction.deposit(90))
       allow(transaction).to receive(:deposit).and_return(30)
-      second_deposit = transaction.deposit(30)
-      transaction_total = first_deposit + second_deposit
-      expect(account.balance(transaction_total)).to eq(120)
+      expect(account.balance_history(transaction.deposit(30))).to eq('90, 120')
     end
 
     it 'should return balance of user after both deposits and withdrawals' do
       allow(transaction).to receive(:deposit).and_return(100)
-      first_deposit = transaction.deposit(100)
+      account.balance_history(transaction.deposit(100))
       allow(transaction).to receive(:withdraw).and_return(-90)
-      first_withdrawal = transaction.withdraw(90)
-      transaction_total = first_deposit + first_withdrawal
-      expect(account.balance(transaction_total)).to eq(10)
+      expect(account.balance_history(transaction.withdraw(90))).to eq('100, 10')
     end
   end
+
+  # describe 'balance_history' do
+  #   it 'should return a string listing the balance history of the account for each transaction' do
+  #     allow(transaction).to receive(:deposit).and_return(100)
+  #     transaction.deposit(100)
+  #     account.balance_history()
+  #   end
+  # end
 
   describe 'transaction_history' do
     it 'should return a string listing the transactions for the account' do
@@ -43,7 +47,7 @@ describe Account do
   end
 
   describe 'date_histroy' do
-    it 'should return an array of the dates of each transaction' do
+    it 'should return an list of dates for each transaction' do
       allow(transaction).to receive(:date) { '14/01/2020' }
       account.date_history(transaction.date)
       allow(transaction).to receive(:date) { '20/01/2020' }

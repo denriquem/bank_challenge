@@ -5,12 +5,14 @@ class Account
 
   def initialize
     @balance = 0
+    @balance_history = []
     @transactions = []
     @transaction_dates = []
   end
 
-  def balance(transaction_total)
-    @balance + transaction_total
+  def balance_history(transaction_total)
+    @balance_history << @balance += transaction_total
+    @balance_history.join(', ')
   end
 
   def transaction_history(transaction)
