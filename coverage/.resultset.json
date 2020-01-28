@@ -78,6 +78,7 @@
         null,
         1,
         5,
+        5,
         null,
         null,
         1,
@@ -105,27 +106,39 @@
         null
       ],
       "/Users/danielmartinez-gatell/Projects/bank_challenge/spec/statement_spec.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        2,
+        2,
+        2,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
         null,
         null,
         null,
+        null
+      ],
+      "/Users/danielmartinez-gatell/Projects/bank_challenge/lib/statement.rb": [
+        1,
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
+        1,
+        1,
         null,
         null,
         null
@@ -159,6 +172,6 @@
         null
       ]
     },
-    "timestamp": 1580159222
+    "timestamp": 1580209158
   }
 }

@@ -15,6 +15,7 @@ class Account
 
   def transaction_history(transaction)
     @transactions << transaction
+    @transactions.join(', ')
   end
 
   def date_history(date)
