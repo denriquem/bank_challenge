@@ -19,7 +19,9 @@ describe Statement do
       current_account_transactions = account.transaction_history(transaction.withdraw(120))
       expect(statement.print(current_account_transactions)).to eq("100, 70, -120")
     end
+  end
 
+  describe 'print_statement' do
     it 'should print a table with date history, credit, debit and balance of each transaction' do
       allow(transaction).to receive(:deposit).and_return(1000)
       allow(account).to receive(:transaction_history).and_return("1000.00")
