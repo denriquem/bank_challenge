@@ -53,6 +53,12 @@ Metrics/BlockLength:
     - 'spec/**/*'
     - 'test/**/*'
 
+Metrics/AbcSize:
+  Max: 25
+
+Metrics/MethodLength:
+  Max: 15
+
 # Code Style
 # ==========
 #
