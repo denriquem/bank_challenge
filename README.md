@@ -6,7 +6,7 @@ First, clone this repository. Then to run tests:
 
  ```
  > gem install bundle
- > bundle
+ > bundle install
  > bundle exec rspec
  ```
 

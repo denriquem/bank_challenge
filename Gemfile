@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'rubocop', '~> 0.71.0', require: false
+gem 'rubocop', '~> 0.71.0'
 gem 'simplecov', require: false, group: :test
-gem 'install rspec'
+gem 'rspec'
