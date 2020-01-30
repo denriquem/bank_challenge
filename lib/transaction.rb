@@ -1,8 +1,10 @@
 # Transaction class
+require_relative 'account'
+require_relative 'statement'
 class Transaction
 
-  def initialize(account = Account)
-    @account = account.new
+  def initialize(account = Account.new)
+    @account = account
   end
 
   def deposit(amount)

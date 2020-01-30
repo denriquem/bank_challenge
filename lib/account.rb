@@ -1,7 +1,7 @@
 # account class
 class Account
 
-  def initialize(statement = Statement)
+  def initialize(statement = Statement.new)
     @statement = statement
     @balance = 0
     @balance_history = []
@@ -25,7 +25,7 @@ class Account
   end
 
   def print
-    @statement.new.print_statement(@transaction_dates.join(', '), @transactions.join(', '), @balance_history.join(', '))
+    @statement.print_statement(@transaction_dates.join(', '), @transactions.join(', '), @balance_history.join(', '))
   end
 
 end
