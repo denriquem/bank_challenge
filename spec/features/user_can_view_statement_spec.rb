@@ -10,9 +10,8 @@ describe Transaction do
       transaction.deposit(100)
       transaction.withdraw(50)
       transaction.deposit(20)
-      expect{transaction.print}.to output("date || credit || debit || balance\n30/01/2020 || 20 || || 170\n30/01/2020 || 50 || || 150\n30/01/2020 || 100 || || 100\n").to_stdout
+      expect{transaction.print}.to output("date || credit || debit || balance\n30/01/2020 || 20 || || 70\n30/01/2020 || || 50 || 50\n30/01/2020 || 100 || || 100\n").to_stdout
     end
   end
-
 
 end

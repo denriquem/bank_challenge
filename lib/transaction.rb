@@ -13,8 +13,8 @@ class Transaction
   end
 
   def withdraw(amount)
-    @account.balance_history(amount)
-    @account.transaction_history(amount)
+    @account.balance_history(-amount)
+    @account.transaction_history(-amount)
     @account.date_history(Time.now.strftime("%d/%m/%Y"))
     @money_out = -amount
   end
