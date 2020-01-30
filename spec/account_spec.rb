@@ -22,14 +22,6 @@ describe Account do
     end
   end
 
-  # describe 'balance_history' do
-  #   it 'should return a string listing the balance history of the account for each transaction' do
-  #     allow(transaction).to receive(:deposit).and_return(100)
-  #     transaction.deposit(100)
-  #     account.balance_history()
-  #   end
-  # end
-
   describe 'transaction_history' do
     it 'should return a string listing the transactions for the account' do
       allow(transaction).to receive(:deposit).and_return(100)
@@ -53,7 +45,7 @@ describe Account do
       allow(transaction).to receive(:date) { '20/01/2020' }
       account.date_history(transaction.date)
       allow(transaction).to receive(:date) { Time.now.strftime("%d/%m/%Y") }
-      expected_date_history = ['14/01/2020', '20/01/2020', Time.now.strftime("%d/%m/%Y")]
+      expected_date_history = "14/01/2020, 20/01/2020, #{Time.now.strftime("%d/%m/%Y")}"
       expect(account.date_history(transaction.date)).to eq(expected_date_history)
     end
   end

@@ -15,12 +15,4 @@ describe Transaction do
     end
   end
 
-  describe 'date' do
-    it 'should return the date that a transaction was completed by the user' do
-      transaction = Transaction.new
-      now = Time.now
-      expect(transaction.date).to eq(now.strftime("%d/%m/%Y"))
-    end
-  end
-
 end

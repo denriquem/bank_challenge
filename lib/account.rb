@@ -1,17 +1,16 @@
 # account class
 class Account
 
-  attr_reader :transactions
-
-  def initialize
+  def initialize(statement = Statement.new)
+    @statement = statement
     @balance = 0
     @balance_history = []
     @transactions = []
     @transaction_dates = []
   end
 
-  def balance_history(transaction_total)
-    @balance_history << @balance += transaction_total
+  def balance_history(transaction)
+    @balance_history << @balance += transaction
     @balance_history.join(', ')
   end
 
@@ -22,6 +21,11 @@ class Account
 
   def date_history(date)
     @transaction_dates << date
+    @transaction_dates.join(', ')
+  end
+
+  def print
+    @statement.print_statement(@transaction_dates.join(', '), @transactions.join(', '), @balance_history.join(', '))
   end
 
 end

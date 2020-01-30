@@ -1,7 +1,5 @@
 class Statement
 
-  attr_reader :date, :transactions, :balance
-
   def print(current_account)
     @transactions = current_account
   end
