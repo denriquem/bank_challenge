@@ -11,13 +11,12 @@ First, clone this repository. Then to run tests:
  ```
 
 ## Areas to improve - currently incomplete
- * Feature tests are not currently working. Need to clarify how to interact with app on irb
- * Currently, the user would have to create their own transaction, create a new instance of the account class, pass their transaction into transaction_history, or balance history. They would also have to call the date method on a new transaction and pass that into the date history method. They would have to repeatedly do that and then pass the resulting transaction_history, balance_history, and date_history, into the print_statement method on the statement class. This is very time-consuming, fiddly and prone to errors.
- * In order to resolve the failing feature test and reduce the users workload from the command line, encapsulation and dependency injection should be used in order to make sure users are only interacting with one class, maybe the transaction class, which then triggers the account and statement classes respectively.
- * This may require restructuring the solution and carefully considering the way that classes interact. Ideally they should cascade into each other rather.
- * At the moment there is huge amount of mocking, especially in the statement spec. Restructuring the solution and sorting out class interactions should go someway to reducing the quantity of code. Using spec helpers to reduce repetition and keep the code DRY would also be useful.
- * Still need to write a full feature test for the user to view the statement.
- * The final print method for the statement class needs some serious refactoring, possible breaking some components into smaller methods and testing for those. From a TDD perspective this was an absolutely huge step. In fact, a similar version should be written out into a feature test and then there should be multiple unit tests in order to solve the feature test.
+ * Mocking desperately needs refactoring to account for the classes now interacting together through depositing or withdrawing money.
+ * Output returns a nasty string at the bottom, related to an extreme and ugly method in the statement class. This needs refactoring urgently.
+ * The final print method for the statement class needs some serious refactoring, possible breaking some components into smaller methods and testing for those. From a TDD perspective this was a huge step and more fine-grained tests should have been used to build up to the solution.
+ * Join called on the end of the print method of the account class needs to be moved to a more elegant place
+ * Overall the code is not particularly clear and simple.
+ * The code needs to account for edgecases. Currenly it only works when an transaction is compeleted. It does not handle a blank statement, or any incorrect input.
  * The transaction class does not store any state at the moment it is only methods. it
 
 ## Technologies
@@ -26,6 +25,18 @@ First, clone this repository. Then to run tests:
 * rspec (testing suite)
 * rubocop (makers scaffolint)
 * simpleCov (test coverage)
+
+## How to run a feature test
+
+```
+> require './lib/transaction.rb'
+> transaction = Transaction.new
+> transaction.deposit(100)
+> transaction.withdraw(50)
+> transaction.deposit(20)
+> transaction.print
+
+```
 
 ## User Stories
 
