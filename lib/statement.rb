@@ -19,7 +19,8 @@ class Statement
       else
         puts "#{element[0]} || #{element[1]} || || #{element[2]}"
       end
-    }.join("")
+    }
+    return nil
   end
 
 end

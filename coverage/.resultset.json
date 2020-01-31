@@ -135,13 +135,14 @@
         2,
         2,
         2,
-        null,
+        2,
         6,
         2,
         null,
         4,
         null,
-        2,
+        null,
+        null,
         null,
         null,
         null
@@ -253,6 +254,6 @@
         null
       ]
     },
-    "timestamp": 1580402732
+    "timestamp": 1580478995
   }
 }
